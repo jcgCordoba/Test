@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './component/container/container.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './reducers/mainchar.reducers';
+ 
 
 @NgModule({
   declarations: [
@@ -10,7 +13,12 @@ import { ContainerComponent } from './component/container/container.component';
     ContainerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot(
+       { 
+         mainChar : reducer 
+       } 
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
